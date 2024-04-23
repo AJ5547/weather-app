@@ -26,15 +26,8 @@ mat-divider {
 mat-card {
   border: 1px solid rgba(0, 0, 0, 0.155);
 }
-.weatherContainer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: space-evenly;
-  padding-top: 30px;
-  margin: 15px 0 0 0;
-}
+
 .weatherCard {
-  width: 33%;
+  width: 100%;
   height: 100%;
 }
