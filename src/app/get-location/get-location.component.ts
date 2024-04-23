@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatCardModule} from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
-import {MatIconModule} from '@angular/material/icon';
-import {FormBuilder, FormGroup, FormsModule} from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { GetDataService } from '../services/gat-data.service';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatLine} from "@angular/material/core";
+import { MatLine } from "@angular/material/core";
 
 
 @Component({
@@ -53,17 +53,17 @@ export class GetLocationComponent {
   location = 'Lehi, UT';
   weatherData: any[] = [];
 
-  getWeather(){
+  getWeather() {
     this.isLoading = true;
     this.location = this.form.controls["city"].getRawValue() + ", " + this.form.controls["state"].getRawValue();
     this.getDataService.getWeather(this.location).subscribe((res: any) => {
-      this.weatherData = res.weather;
       this.getDataService.setApiResponseCache(res);
       this.isLoading = false;
       this.router.navigate(['/weather']);
     });
-  }
 
+
+  }
   clearCity(): void {
     this.form.controls['city'].setValue('');
   }
